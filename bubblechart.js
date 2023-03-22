@@ -78,22 +78,22 @@ window.onload = function(){
     var x = d3.scaleLinear() //create the scale
         .range([90, 810]) //output min and max
         .domain([0, 3]) //input min and max --remove semicolon as build out, leaving removes container 
-        //DOES THIS GO HERE
+        //DOES THIS GO HERE--keep receiving error around here
         .attr("cx", function(d, i){
             //use the scale generator with the index to place each circle horizontally
             return x(i);
         }) //no semicolon needed?
-// step 3-5
-//color scale generator example 3.5 
-var color = d3.scaleLinear()
-.range([
-    "#FDBE85",
-    "#D94701"
-])
-.domain([
-    minPop, 
-    maxPop
-]);
+    // step 3-5
+    //color scale generator example 3.5 
+    var color = d3.scaleLinear()
+        .range([
+            "#FDBE85",
+            "#D94701"
+        ])
+        .domain([
+            minPop, 
+            maxPop
+    ]);
 
 // step 3-3 // find the minimum value of the array example 3.3
 
