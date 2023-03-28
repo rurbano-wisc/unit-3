@@ -1,0 +1,24 @@
+OBJECTID,ESU_DPS,Status,Class,Type of Salmon,Number of Dams,mean mine size in acres,Number of Mines,NumHatcheries,TotalRiverMiles,WildScenicRiversPct,WildSceniceligiblePct,PctMinesbeforeEndanged,BuiltDuringDamEraPct,change_Apr_precip,change_Aug_precip,change_Nov_precip,AreaofRange
+1,California Coastal Chinook Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,Chinook,3,46.25,8,0,132.0781425,0,0,100,33.33333333,1.623182779,-0.379287153,-2.315301265,610.2692099
+2,California Coastal Chinook Salmon,Threatened,Accessible,Chinook,84,19.09354167,48,2,1832.806936,23.54389993,4.290412208,31.25,26.19047619,10.67222098,-2.368456605,16.50703075,7806.524317
+3,Lower Columbia River Chinook Salmon,Threatened,Accessible,Chinook,90,22.33819881,503,86,1640.16311,4.588450727,,66.99801193,32.22222222,25.9053255,5.601271738,42.42657078,6655.794337
+5,Lower Columbia River Chinook Salmon,Threatened,Naturally Blocked,Chinook,2,,0,0,20.13081941,0,,,0,1.632257821,0.421237838,3.636559981,52.76731499
+6,Puget Sound Chinook Salmon,Threatened,Accessible,Chinook,214,22.26606928,332,30,2602.588224,6.631893035,2.035601948,81.92771084,16.82242991,-19.31458242,8.925239436,-53.02952076,9635.821802
+7,Puget Sound Chinook Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,Chinook,3,,0,1,99.99295254,0,0,,66.66666667,-1.692534537,1.798897303,-3.307205662,472.5767005
+8,Upper Willamette River Chinook Salmon,Threatened,Accessible,Chinook,127,25.98978723,94,11,1561.685427,4.955606899,,97.87234043,21.25984252,-1.20464874,-3.67156382,-24.39106081,5990.188346
+9,Upper Willamette River Chinook Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,Chinook,4,43.66016232,69,1,225.8296972,7.4877233,,92.75362319,25,2.819633467,-0.047739491,-7.717822485,1033.975663
+10,Central Valley Spring-run Chinook Salmon,Threatened,Accessible-Likely Extirpated,Chinook,104,22.49919355,124,2,1531.092333,0,0,82.25806452,28.84615385,-5.727973449,-1.937943694,-24.81012487,8224.602033
+11,Central Valley Spring-run Chinook Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,Chinook,346,35.98632563,8088,0,4218.904775,10.07219761,0.987331603,82.38130564,24.85549133,18.53840273,3.382797009,18.76638909,15797.2152
+12,Central Valley Spring-run Chinook Salmon,Threatened,Accessible,Chinook,59,24.42727273,110,2,1555.399933,0.184284453,0.045673409,93.63636364,28.81355932,0.882704512,-1.539334191,-7.327949201,4797.102217
+13,Lower Columbia River/Upper Will. Chinook,Threatened,Accessible,Chinook,14,20.66,4,3,206.7759701,51.38367773,,100,28.57142857,11.38257244,-0.051419234,7.354593025,803.2574135
+14,Sacramento Winter-run/Central Val. Spr. Chinook,Endangered/Threatened,Historical Watershed: Anthropogenically Blocked,Chinook,88,20.73087649,502,0,1235.772054,0,1.699342523,99.80079681,34.09090909,-14.17451819,-1.911332937,-43.15661137,5723.38157
+15,Sacramento Winter-run/Central Val. Spr. Chinook,Endangered/Threatened,Accessible,Chinook,33,82.5905,40,0,934.4089177,2.1363301,,100,21.21212121,-6.291540275,-1.997377603,-31.04392209,4266.387396
+16,Central California Coast Coho Salmon,Endangered,Historical Watershed: Anthropogenically Blocked,Coho,25,20,2,0,318.2408813,0,0,100,52,-2.295250395,-0.813022606,-11.31127116,1089.108435
+17,Central California Coast Coho Salmon,Endangered,Accessible - Likely Extirpated,Coho,122,,0,0,409.9005464,0,0,,36.06557377,-0.297983751,-0.992750923,-20.66939499,2535.278112
+18,Central California Coast Coho Salmon,Endangered,Accessible,Coho,99,20.41692308,13,1,927.8379575,0,3.986379058,100,35.35353535,13.00597144,-0.740176457,10.25670342,4097.136502
+19,Oregon Coast Coho Salmon,Threatened,Accessible,Coho,70,27.7804232,487,0,3183.495728,2.362923059,,81.51950719,42.85714286,5.819848042,-8.636924396,-2.699023026,10748.20419
+20,Southern OR\Northern CA Coasts Coho Salmon,Threatened,Accessible,Coho,93,33.36096938,3807,3,4046.325381,42.75086779,1.498519556,80.11557657,35.48387097,-9.554308445,-6.003302042,-17.48449858,18316.48784
+21,Southern OR\Northern CA Coasts Coho Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,Coho,15,22.99618794,282,0,500.3108523,14.88282759,,90.07092199,46.66666667,-9.102353067,-2.071566379,-20.60224153,2010.920133
+22,Lower Columbia River Coho Salmon,Threatened,Accessible,Coho,104,22.32495858,507,89,1846.938266,9.827459914,,67.25838264,31.73076923,27.52730042,4.985930009,41.14231383,7459.054056
+23,Lower Columbia River Coho & Chinook Salmon,Threatened,Historical Watershed: Anthropogenically Blocked,"Coho, Chinook",4,20.66,7,9,230.1637011,11.97777838,,100,100,0.3884238,-1.182814197,3.621927636,1095.792901
+24,Lower Columbia River Coho Salmon,Threatened,Naturally Blocked,Coho,2,,0,0,20.1308375,0,,,0,1.632257422,0.421237735,3.636559093,52.76730386

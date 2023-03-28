@@ -1,5 +1,6 @@
 /*Add CSS styles here*/
-/* step 3-10 style axis */
+
+/* style axis
 .axis path,
 .axis line {
     fill: none;
@@ -11,10 +12,34 @@
 .axis text {
     font-family: sans-serif;
     font-size: 0.9em;
-}
-/* step 3-13 style title */
+} */
+
+/* style title */
 .title {
     font-family: sans-serif;
     font-size: 1.5em;
     font-weight: bold;
+}
+
+
+.countries {
+    fill: #FFF;
+    stroke: #CCC;
+    stroke-width: 2px;
+}
+
+.gratLines {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+}
+
+.gratBackground {
+    fill: #D5E3FF;
+}
+
+.map {
+    border: medium solid #999;
+    height: 480px;    
+    width: 90%;
 }
