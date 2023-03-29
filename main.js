@@ -4,8 +4,8 @@ window.onload = setMap();
 //set up choropleth map
 function setMap(){
 //map frame dimensions
-var width = 960,
-    height = 460;
+var width = 500,
+    height = 500;
 
  //create new svg container for the map
  var map = d3.select("body")
@@ -15,37 +15,39 @@ var width = 960,
     .attr("height", height);
 
  // create Albers equal area conic projection centered on West Coast; replaced // Example 2.2: Creating a path generator
- // var projection = d3.geoAlbersUsa()
  var projection = d3.geoAlbers()
-    .center([-36.36, 42.84])   
+    .center([-42.36, 42.84])   
     .rotate([81, 1.82, 0]) 
     .parallels([29.5, 45.5])
-    .scale(1689.90)
+    .scale(2000.90)
     .translate([width / 2, height / 2]);
 
 var path = d3.geoPath()
     .projection(projection);
 
 //  //use Promise.all to parallelize asynchronous data loading
-var promises = [];    
-promises.push(d3.csv("data/Coho_Chinook_SalmonRanges.csv")); //load attributes from csv    
-promises.push(d3.json("data/CohoChinook_SalmonRanges.topojson")); //load background spatial data    
-promises.push(d3.json("data/County_Salmon.topojson")); //load choropleth spatial data    
+var promises = [    
+    d3.csv("data/Coho_Chinook_SalmonRanges.csv"),
+    d3.json("data/County_Salmon.topojson"),
+    d3.json("data/CohoChinook_SalmonRanges.topojson"),
+];    
 Promise.all(promises).then(callback)
-
     //catch promises to troubleshoot
     .catch(function(error) {
-    console.log(error)});
-
+        console.log(error);
+    });
+  ;
+  
     //Example 1.4: Adding a callback to
 function callback(data) {
+    // console.log(data);
     var csvData = data[0],
-        SalmonRanges = data[1],
-        SalmonCounties = data[2];
+        County_Salmon = data[1],
+        salmonRanges = data[2];
         
 console.log(csvData);
-console.log(SalmonRanges);
-console.log(SalmonCounties);
+console.log(County_Salmon);
+console.log(salmonRanges);
 
     //create graticule generator
     var graticule = d3.geoGraticule()
@@ -66,21 +68,21 @@ console.log(SalmonCounties);
         .attr("d", path); //project graticule lines
 
     //translate range/county TopoJSON
-    var Salmon_Ranges = topojson.feature(SalmonRanges, SalmonRanges.objects.CohoChinook_SalmonRanges),
-        Salmon_Counties = topojson.feature(SalmonCounties, SalmonCounties.objects.County_Salmon).features;
+    var salmon_Counties = topojson.feature(County_Salmon, County_Salmon.objects.County_Salmon),
+        salmon_Ranges = topojson.feature(salmonRanges, salmonRanges.objects.CohoChinook_SalmonRanges).features;
 
     // // //examine the results
     // console.log(Salmon_Ranges);
     // console.log(Salmon_Counties);
- //add Salmon_Ranges counties to map-this is just underlying reference data
+ //add salmon_Counties counties to map-this is just underlying reference data
  var counties = map.append("path")
- .datum(Salmon_Counties)
+ .datum(salmon_Counties)
  .attr("class", "counties")
  .attr("d", path);
 
-//add Salmon_Counties regions to map-this has all the data join on id
+//add salmonRanges regions to map-this has all the data join on id
 var ranges = map.selectAll(".ranges")
- .data(Salmon_Ranges)
+ .data(salmon_Ranges)
  .enter()
  .append("path")
  .attr("class", function(d){

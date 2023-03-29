@@ -27,18 +27,18 @@
     stroke: #CCC;
     stroke-width: 2px;
 } */
-.countries {
+/* .countries {
     fill: #1bac50;
     stroke: #CCC;
     stroke-width: 2px;
-}
+} */
 .counties {
-    fill: #1bac50;
+    fill: white;
     stroke: #CCC;
     stroke-width: 2px;
 }
 .ranges {
-    fill: #FFF;
+    fill: salmon;
     stroke: #CCC;
     stroke-width: 2px;
 } 
@@ -54,6 +54,4 @@
 
 .map {
     border: medium solid #999;
-    height: 480px;    
-    width: 90%;
 }

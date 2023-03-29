@@ -32,8 +32,7 @@ var path = d3.geoPath()
 // promises.push(d3.json("data/EuropeCountries.topojson")); //load background spatial data    
 // promises.push(d3.json("data/FranceRegions.topojson")); //load choropleth spatial data    
 // Promise.all(promises).then(callback);
-// }
-    
+// }    
 var promises = [
     d3.csv("data/unitsData.csv"),
     d3.json("data/EuropeCountries.topojson"),
@@ -77,7 +76,7 @@ function callback(data) {
 // console.log(topojson); //loads just fine >|
         //translate europe TopoJSON
   var europe_countries = topojson.feature(europe, europe.objects.EuropeCountries),
-  franceRegions = topojson.feature(france, france.objects.France_Regions).features;
+  franceRegions = topojson.feature(france, france.objects.collection).features;
 
   //add Europe countries to map
   var countries = map.append("path")
@@ -95,7 +94,5 @@ function callback(data) {
     })
     .attr("d", path);
 
-}
-
-  
+} 
 };
