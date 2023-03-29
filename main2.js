@@ -25,28 +25,37 @@ var projection = d3.geoAlbers()
 
 var path = d3.geoPath()
     .projection(projection);
+
+// //use Promise.all to parallelize asynchronous data loading
+// var promises = [];    
+// promises.push(d3.csv("data/unitsData.csv")); //load attributes from csv    
+// promises.push(d3.json("data/EuropeCountries.topojson")); //load background spatial data    
+// promises.push(d3.json("data/FranceRegions.topojson")); //load choropleth spatial data    
+// Promise.all(promises).then(callback);
+// }
     
-//use Promise.all to parallelize asynchronous data loading
-//   var promises = [d3.csv("data/unitsData.csv"),                    
-//                   d3.json("data/EuropeCountries.topojson"),                    
-//                   d3.json("data/FranceRegions.topojson")                   
-//                   ];    
-//   Promise.all(promises).then(callback);
 var promises = [
     d3.csv("data/unitsData.csv"),
     d3.json("data/EuropeCountries.topojson"),
-    d3.json("data/FranceRegions.topojson"),
+    d3.json("data/France_Regions.topojson"),
 ];
-Promise.all(promises).then(callback);
+Promise.all(promises).then(callback)
+//catch promises to troubleshoot
+.catch(function(error) {
+    console.log(error);
+  });
+
+;
 
 function callback(data) {
+    console.log(data); // log out the data variable to the console
     var csvData = data[0],
         europe = data[1],
         france = data[2];
 
-console.log(csvData);
-console.log(europe);
-console.log(france);
+// console.log(csvData);
+// console.log(europe);
+// console.log(france);
 
     //create graticule generator
     var graticule = d3.geoGraticule()
@@ -65,14 +74,14 @@ console.log(france);
         .append("path") //append each element to the svg as a path element
         .attr("class", "gratLines") //assign class for styling
         .attr("d", path); //project graticule lines
-
+// console.log(topojson); //loads just fine >|
         //translate europe TopoJSON
-  var europeCountries = topojson.feature(europe, europe.objects.EuropeCountries),
-  franceRegions = topojson.feature(france, france.objects.FranceRegions).features;
+  var europe_countries = topojson.feature(europe, europe.objects.EuropeCountries),
+  franceRegions = topojson.feature(france, france.objects.France_Regions).features;
 
   //add Europe countries to map
   var countries = map.append("path")
-    .datum(europeCountries)
+    .datum(europe_countries)
     .attr("class", "countries")
     .attr("d", path);
 
@@ -86,7 +95,7 @@ console.log(france);
     })
     .attr("d", path);
 
-};
+}
 
   
-}
+};

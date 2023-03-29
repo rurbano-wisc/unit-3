@@ -3,7 +3,7 @@ window.onload = setMap();
 
 //set up choropleth map
 function setMap(){
-    //map frame dimensions
+//map frame dimensions
 var width = 960,
     height = 460;
 
@@ -16,7 +16,7 @@ var width = 960,
 
  // create Albers equal area conic projection centered on West Coast; replaced // Example 2.2: Creating a path generator
  // var projection = d3.geoAlbersUsa()
- var projection = d3.geo.albers()
+ var projection = d3.geoAlbers()
     .center([-36.36, 42.84])   
     .rotate([81, 1.82, 0]) 
     .parallels([29.5, 45.5])
@@ -26,23 +26,26 @@ var width = 960,
 var path = d3.geoPath()
     .projection(projection);
 
- //use Promise.all to parallelize asynchronous data loading
-    var promises = [
-        d3.csv("data/CohoChinook_SalmonRanges.csv"),                    
-        d3.json("data/CohoChinook_SalmonRanges.topojson"),
-        d3.json("data/County_Salmon.topojson"),                   
-    ];    
-    Promise.all(promises).then(callback);
+//  //use Promise.all to parallelize asynchronous data loading
+var promises = [];    
+promises.push(d3.csv("data/Coho_Chinook_SalmonRanges.csv")); //load attributes from csv    
+promises.push(d3.json("data/CohoChinook_SalmonRanges.topojson")); //load background spatial data    
+promises.push(d3.json("data/County_Salmon.topojson")); //load choropleth spatial data    
+Promise.all(promises).then(callback)
+
+    //catch promises to troubleshoot
+    .catch(function(error) {
+    console.log(error)});
 
     //Example 1.4: Adding a callback to
 function callback(data) {
     var csvData = data[0],
-        CohoChinookRanges = data[1],
-        County_Salmon = data[2];
+        SalmonRanges = data[1],
+        SalmonCounties = data[2];
         
-    console.log(csvData);
-    console.log(CohoChinookRanges);
-    console.log(County_Salmon);
+console.log(csvData);
+console.log(SalmonRanges);
+console.log(SalmonCounties);
 
     //create graticule generator
     var graticule = d3.geoGraticule()
@@ -63,27 +66,27 @@ function callback(data) {
         .attr("d", path); //project graticule lines
 
     //translate range/county TopoJSON
-    var CohoChinook_Salmon_Ranges = topojson.feature(CohoChinookRanges, CohoChinookRanges.objects.CohoChinook_SalmonRanges),
-        CohoChinook_Salmon_County = topojson.feature(County_Salmon, County_Salmon.objects.County_Salmon).features;
+    var Salmon_Ranges = topojson.feature(SalmonRanges, SalmonRanges.objects.CohoChinook_SalmonRanges),
+        Salmon_Counties = topojson.feature(SalmonCounties, SalmonCounties.objects.County_Salmon).features;
 
     // // //examine the results
-    // console.log(CohoChinook_Salmon_Ranges);
-    // console.log(CohoChinook_Salmon_County);
- //add Europe countries to map
- var ranges = map.append("path")
- .datum(CohoChinook_Salmon_Ranges)
- .attr("class", "ranges")
+    // console.log(Salmon_Ranges);
+    // console.log(Salmon_Counties);
+ //add Salmon_Ranges counties to map-this is just underlying reference data
+ var counties = map.append("path")
+ .datum(Salmon_Counties)
+ .attr("class", "counties")
  .attr("d", path);
 
-//add France regions to map
-var counties = map.selectAll(".regions")
- .data(CohoChinook_Salmon_County)
+//add Salmon_Counties regions to map-this has all the data join on id
+var ranges = map.selectAll(".ranges")
+ .data(Salmon_Ranges)
  .enter()
  .append("path")
  .attr("class", function(d){
-     return "counties " + d.properties.COUNTYNAME;
+     return "ranges " + d.properties.id;
  })
  .attr("d", path);
 
-}
 };
+}
