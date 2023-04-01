@@ -40,7 +40,6 @@ var promises = [
 ];
 Promise.all(promises).then(callback);
 
-
 function callback(data) {
     console.log(data); // log out the data variable to the console
     var csvData = data[0], europe = data[1],france = data[2];

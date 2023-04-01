@@ -22,32 +22,35 @@
     font-weight: bold;
 }
 
-.regions {
-    stroke: #000;
-    stroke-width: 0.5px;
-    stroke-linecap: round;
-}
 .countries {
     fill: #1bac50;
     stroke: #CCC;
     stroke-width: 2px;
 }
+.regions {
+    stroke: #000;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+}
+
 .counties {
-    fill: white;
+    fill: lightblue;
     stroke: #CCC;
     stroke-width: 2px;
+    fill-opacity: .2;
 }
 .ranges {
-    fill: salmon;
-    stroke: #CCC;
+    /* fill: salmon; */
+    stroke: #000;
     stroke-width: 2px;
+    fill-opacity: .2;
 } 
+
 .gratLines {
     fill: none;
     stroke: #999;
     stroke-width: 1px;
 }
-
 .gratBackground {
     fill: #D5E3FF;
 }
