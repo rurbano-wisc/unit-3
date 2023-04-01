@@ -22,16 +22,16 @@
     font-weight: bold;
 }
 
-/* .regions {
-    fill: #FFF;
-    stroke: #CCC;
-    stroke-width: 2px;
-} */
-/* .countries {
+.regions {
+    stroke: #000;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+}
+.countries {
     fill: #1bac50;
     stroke: #CCC;
     stroke-width: 2px;
-} */
+}
 .counties {
     fill: white;
     stroke: #CCC;

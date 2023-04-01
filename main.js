@@ -28,7 +28,7 @@ var path = d3.geoPath()
 //  //use Promise.all to parallelize asynchronous data loading
 var promises = [    
     d3.csv("data/Coho_Chinook_SalmonRanges.csv"),
-    d3.json("data/County_Salmon.topojson"),
+    d3.json("data/CountySalmon.topojson"),
     d3.json("data/CohoChinook_SalmonRanges.topojson"),
 ];    
 Promise.all(promises).then(callback)
@@ -68,7 +68,7 @@ console.log(salmonRanges);
         .attr("d", path); //project graticule lines
 
     //translate range/county TopoJSON
-    var salmon_Counties = topojson.feature(County_Salmon, County_Salmon.objects.County_Salmon),
+    var salmon_Counties = topojson.feature(County_Salmon, County_Salmon.objects.CountySalmon),
         salmon_Ranges = topojson.feature(salmonRanges, salmonRanges.objects.CohoChinook_SalmonRanges).features;
 
     // // //examine the results
