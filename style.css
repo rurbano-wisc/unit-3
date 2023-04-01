@@ -1,27 +1,63 @@
 /*Add CSS styles here*/
+/* map */
+.map {
+    border: medium solid #999;
+    margin: 10px 0 0 20px;
+}
+.chartTitle {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.chart {
+    float: right;
+    margin: 7px 20px 0 0;
+}
 
-/* style axis
+.chartTitle {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.chartBackground {
+    fill: rgba(128,128,128,.2);
+}
+
+.chartFrame {
+    fill: none;
+    stroke: #999;
+    stroke-width: 3px;
+    shape-rendering: crispEdges;
+}
+
 .axis path,
 .axis line {
     fill: none;
-    stroke: black;
+    stroke: #999;
     stroke-width: 1px;
     shape-rendering: crispEdges;
 }
 
 .axis text {
     font-family: sans-serif;
-    font-size: 0.9em;
-} */
+    font-size: 0.8em;
+    fill: #999;
+}
+.numbers {
+    fill: white;
+    font-family: sans-serif;
+}
 
 /* style title */
-
 .title {
     font-family: sans-serif;
     font-size: 1.5em;
     font-weight: bold;
 }
 
+
+/* activity 9 data */
 .countries {
     fill: #1bac50;
     stroke: #CCC;
@@ -33,6 +69,8 @@
     stroke-linecap: round;
 }
 
+
+/* salmon data */
 .counties {
     fill: lightblue;
     stroke: #CCC;
@@ -43,9 +81,12 @@
     /* fill: salmon; */
     stroke: #000;
     stroke-width: 2px;
+    stroke-linecap: round;
     fill-opacity: .2;
 } 
 
+
+/* graticule */
 .gratLines {
     fill: none;
     stroke: #999;
@@ -53,8 +94,4 @@
 }
 .gratBackground {
     fill: #D5E3FF;
-}
-
-.map {
-    border: medium solid #999;
 }

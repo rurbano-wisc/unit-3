@@ -11,7 +11,7 @@ window.onload = setMap();
 //set up choropleth map
 function setMap(){
 //map frame dimensions
-var width = 960,
+var width = window.innerWidth * 0.5,
     height = 460;
 
 // console.log("map:", map);
@@ -67,7 +67,9 @@ franceRegions = joinData(franceRegions, csvData);
 var colorScale = makeColorScale(csvData);
 setEnumerationUnits(franceRegions, map, path, colorScale);
 
-    };
+//add coordinated visualization to the map
+setChart(csvData, colorScale);
+};
 }; //end of setMap()
 
 function setGraticule(map, path){
@@ -164,6 +166,109 @@ function joinData(franceRegions, csvData){
     };
     return franceRegions;
 };
+
+//function to create coordinated bar chart
+function setChart(csvData, colorScale){
+    //chart frame dimensions
+    var chartWidth = window.innerWidth * 0.425,
+        chartHeight = 473;
+        leftPadding = 25,
+        rightPadding = 2,
+        topBottomPadding = 5,
+        chartInnerWidth = chartWidth - leftPadding - rightPadding,
+        chartInnerHeight = chartHeight - topBottomPadding * 2,
+        translate = "translate(" + leftPadding + "," + topBottomPadding + ")";
+
+    //create a second svg element to hold the bar chart
+    var chart = d3.select("body")
+        .append("svg")
+        .attr("width", chartWidth)
+        .attr("height", chartHeight)
+        .attr("class", "chart");
+
+    //create a rectangle for chart background fill
+    var chartBackground = chart.append("rect")
+        .attr("class", "chartBackground")
+        .attr("width", chartInnerWidth)
+        .attr("height", chartInnerHeight)
+        .attr("transform", translate);
+    
+    //create a scale to size bars proportionally to frame
+    var yScale = d3.scaleLinear()
+        .range([463, 0])
+        .domain([0, 100]);
+
+   //set bars for each province
+   var bars = chart.selectAll(".bar")
+        .data(csvData)
+        .enter()
+        .append("rect")
+        .sort(function(a, b){
+            return b[expressed]-a[expressed]
+        })
+        .attr("class", function(d){
+            return "bar " + d.adm1_code;
+        })
+        .attr("width", chartInnerWidth / csvData.length - 1)
+        .attr("x", function(d, i){
+            return i * (chartInnerWidth / csvData.length) + leftPadding;
+        })
+        .attr("height", function(d, i){
+            return 463 - yScale(parseFloat(d[expressed]));
+        })
+        .attr("y", function(d, i){
+            return yScale(parseFloat(d[expressed])) + topBottomPadding;
+        })
+        .style("fill", function(d){
+            return colorScale(d[expressed]);
+        });
+
+  //annotate bars with attribute value text
+    var numbers = chart.selectAll(".numbers")
+        .data(csvData)
+        .enter()
+        .append("text")
+        .sort(function(a, b){
+            return a[expressed]-b[expressed]
+        })
+        .attr("class", function(d){
+            return "numbers " + d.adm1_code;
+        })
+        .attr("text-anchor", "middle")
+        .attr("x", function(d, i){
+            var fraction = chartWidth / csvData.length;
+            return i * fraction + (fraction - 1) / 2;
+        })
+        .attr("y", function(d){
+            return chartHeight - yScale(parseFloat(d[expressed])) + 15;
+        })
+        .text(function(d){
+            return d[expressed];
+        });
+
+    //below Example 2.8...create a text element for the chart title
+    var chartTitle = chart.append("text")
+        .attr("x", 40)
+        .attr("y", 40)
+        .attr("class", "chartTitle")
+        .text("Number of Variable " + expressed[3] + " in each region");
+     //create vertical axis generator
+    var yAxis = d3.axisLeft()
+        .scale(yScale);
+ //place axis
+    var axis = chart.append("g")
+        .attr("class", "axis")
+        .attr("transform", translate)
+        .call(yAxis);
+//create frame for chart border
+var chartFrame = chart.append("rect")
+     .attr("class", "chartFrame")
+     .attr("width", chartInnerWidth)
+     .attr("height", chartInnerHeight)
+     .attr("transform", translate);        
+};//close out setChart function
+
+
 
 function setEnumerationUnits(franceRegions, map, path, colorScale){
     //...REGIONS BLOCK FROM CHAPTER 8
