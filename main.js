@@ -2,7 +2,7 @@
 (function(){
 
 //pseudo-global variables
-var attrArray = ["varA", "varB", "varC", "varD", "varE"]; //list of attributes
+var attrArray = ["TotalRiverMiles", "change_Apr_precip", "change_Aug_precip", "change_Nov_precip", "WildScenicRiversPct"]; //list of attributes
 var expressed = attrArray[0]; //initial attribute
 
 //begin script when window loads
@@ -146,13 +146,13 @@ function joinData(salmon_Ranges, csvData){
    //loop through csv to assign each set of csv attribute values to geojson region
    for (var i=0; i<csvData.length; i++){
        var csvRegion = csvData[i]; //the current region
-       var csvKey = csvRegion.OBJECTID; //the CSV primary key
+       var csvKey = csvRegion.RangeID; //the CSV primary key
 
        //loop through geojson regions to find correct region
        for (var a=0; a<salmon_Ranges.length; a++){
 
            var geojsonProps = salmon_Ranges[a].properties; //the current region geojson properties
-           var geojsonKey = geojsonProps.OBJECTID; //the geojson primary key
+           var geojsonKey = geojsonProps.RangeID; //the geojson primary key
 
            //where primary keys match, transfer csv data to geojson properties object
            if (geojsonKey == csvKey){
@@ -209,7 +209,7 @@ function setChart(csvData, colorScale){
             return b[expressed]-a[expressed]
         })
         .attr("class", function(d){
-            return "bar " + d.OBJECTID; //NEED TO RESOLVE OBJECTID; ID FIELD ISSUE
+            return "bar " + d.RangeID; //NEED TO RESOLVE RangeID; ID FIELD ISSUE
         })
         .attr("width", chartInnerWidth / csvData.length - 1)
         .attr("x", function(d, i){
@@ -234,7 +234,7 @@ function setChart(csvData, colorScale){
             return a[expressed]-b[expressed]
         })
         .attr("class", function(d){
-            return "numbers " + d.OBJECTID;
+            return "numbers " + d.RangeID;
         })
         .attr("text-anchor", "middle")
         .attr("x", function(d, i){
@@ -278,7 +278,7 @@ function setEnumerationUnits(salmon_Ranges, map, path, colorScale){
     .enter()
     .append("path")
     .attr("class", function(d){
-        return "ranges " + d.properties.OBJECTID;
+        return "ranges " + d.properties.RangeID;
     })
     .attr("d", path)
     .style("fill", function(d){            

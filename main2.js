@@ -268,8 +268,6 @@ var chartFrame = chart.append("rect")
      .attr("transform", translate);        
 };//close out setChart function
 
-
-
 function setEnumerationUnits(franceRegions, map, path, colorScale){
     //...REGIONS BLOCK FROM CHAPTER 8
     //add France regions to map

@@ -1,4 +1,4 @@
-﻿OBJECTID,ESU_DPS,Class,TotalRiverMiles,WildScenicRiversPct,PctMinesbeforeEndanged,BuiltDuringDamEraPct,change_Apr_precip,change_Aug_precip,change_Nov_precip,AreaofRange
+﻿RangeID,ESU_DPS,Class,TotalRiverMiles,WildScenicRiversPct,PctMinesbeforeEndanged,BuiltDuringDamEraPct,change_Apr_precip,change_Aug_precip,change_Nov_precip,AreaofRange
 1,California Coastal Chinook Salmon,Historical Watershed: Anthropogenically Blocked,132.0781425,0,100,33.33333333,1.623182779,-0.379287153,-2.315301265,610.2692099
 2,California Coastal Chinook Salmon,Accessible,1832.806936,23.54389993,31.25,26.19047619,10.67222098,-2.368456605,16.50703075,7806.524317
 3,Lower Columbia River Chinook Salmon,Accessible,1640.16311,4.588450727,66.99801193,32.22222222,25.9053255,5.601271738,42.42657078,6655.794337
