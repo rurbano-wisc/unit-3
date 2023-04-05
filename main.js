@@ -1,8 +1,8 @@
 //2-2 D3 basemap 
 (function(){
-
+//"TotalRiverMiles", "change_Apr_precip", "change_Aug_precip", "change_Nov_precip", "WildScenicRiversPct"
 //pseudo-global variables
-var attrArray = ["TotalRiverMiles", "change_Apr_precip", "change_Aug_precip", "change_Nov_precip", "WildScenicRiversPct"]; //list of attributes
+var attrArray = ["varA", "varB", "varC", "varD", "varE"]; //list of attributes
 var expressed = attrArray[0]; //initial attribute
 
 //begin script when window loads
@@ -34,7 +34,7 @@ var path = d3.geoPath()
 
 //use Promise.all to parallelize asynchronous data loading
 var promises = [    
-    d3.csv("data/Coho_Chinook_SalmonRanges.csv"),
+    d3.csv("data/Coho_Chinook_SalmonRanges2.csv"),
     d3.json("data/CountySalmon.topojson"),
     d3.json("data/CohoChinook_SalmonRanges.topojson"),
 ];    

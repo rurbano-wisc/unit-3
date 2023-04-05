@@ -1,0 +1,24 @@
+﻿RangeID,ESU_DPS,Class,varA,varB,varC,varD,varE
+1,California Coastal Chinook Salmon,Historical Watershed: Anthropogenically Blocked,132.0781425,1.62,-0.38,-2.32,0
+2,California Coastal Chinook Salmon,Accessible,1832.806936,10.67,-2.37,16.51,23.54389993
+3,Lower Columbia River Chinook Salmon,Accessible,1640.16311,25.91,5.6,42.43,4.588450727
+4,Lower Columbia River Chinook Salmon,Historical Watershed: Anthropogenically Blocked,230.163423,0.39,-1.18,3.62,11.97780911
+5,Lower Columbia River Chinook Salmon,Naturally Blocked,20.13081941,1.63,0.42,3.64,0
+6,Puget Sound Chinook Salmon,Accessible,2602.588224,-19.31,8.93,-53.03,6.631893035
+7,Puget Sound Chinook Salmon,Historical Watershed: Anthropogenically Blocked,99.99295254,-1.69,1.8,-3.31,0
+8,Upper Willamette River Chinook Salmon,Accessible,1561.685427,-1.2,-3.67,-24.39,4.955606899
+9,Upper Willamette River Chinook Salmon,Historical Watershed: Anthropogenically Blocked,225.8296972,2.82,-0.05,-7.72,7.4877233
+10,Central Valley Spring-run Chinook Salmon,Accessible-Likely Extirpated,1531.092333,-5.73,-1.94,-24.81,0
+11,Central Valley Spring-run Chinook Salmon,Historical Watershed: Anthropogenically Blocked,4218.904775,18.54,3.38,18.77,10.07219761
+12,Central Valley Spring-run Chinook Salmon,Accessible,1555.399933,0.88,-1.54,-7.33,0.184284453
+13,Lower Columbia River/Upper Will. Chinook,Accessible,206.7759701,11.38,-0.05,7.35,51.38367773
+14,Sacramento Winter-run/Central Val. Spr. Chinook,Historical Watershed: Anthropogenically Blocked,1235.772054,-14.17,-1.91,-43.16,0
+15,Sacramento Winter-run/Central Val. Spr. Chinook,Accessible,934.4089177,-6.29,-2,-31.04,2.1363301
+16,Central California Coast Coho Salmon,Historical Watershed: Anthropogenically Blocked,318.2408813,-2.3,-0.81,-11.31,0
+17,Central California Coast Coho Salmon,Accessible - Likely Extirpated,409.9005464,-0.3,-0.99,-20.67,0
+18,Central California Coast Coho Salmon,Accessible,927.8379575,13.01,-0.74,10.26,0
+19,Oregon Coast Coho Salmon,Accessible,3183.495728,5.82,-8.64,-2.7,2.362923059
+20,Southern OR\Northern CA Coasts Coho Salmon,Accessible,4046.325381,-9.55,-6,-17.48,42.75086779
+21,Southern OR\Northern CA Coasts Coho Salmon,Historical Watershed: Anthropogenically Blocked,500.3108523,-9.1,-2.07,-20.6,14.88282759
+22,Lower Columbia River Coho Salmon,Accessible,1846.938266,27.53,4.99,41.14,9.827459914
+23,Lower Columbia River Coho & Chinook Salmon,Historical Watershed: Anthropogenically Blocked,230.1637011,0.39,-1.18,3.62,11.97777838
