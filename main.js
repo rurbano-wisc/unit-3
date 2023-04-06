@@ -2,7 +2,7 @@
 (function(){
 //"TotalRiverMiles", "change_Apr_precip", "change_Aug_precip", "change_Nov_precip", "WildScenicRiversPct"
 //pseudo-global variables
-var attrArray = ["varA", "varB", "varC", "varD", "varE"]; //list of attributes
+var attrArray = ["change_Apr_precip", "change_Aug_precip","change_Nov_precip","TotalRiverMiles", "WildScenicRiversPct","PctMinesbeforeEndanged","BuiltDuringDamEraPct","AreaofRange","NumHatcheries"]; //list of attributes
 var expressed = attrArray[0]; //initial attribute
 
 //begin script when window loads
@@ -52,7 +52,7 @@ console.log(salmonRanges);
 setGraticule(map, path);
 
 //translate range/county TopoJSON
-var salmon_Counties = topojson.feature(County_Salmon, County_Salmon.objects.CountySalmon).features, //why does the .features make my counties go away but without it my counties will draw?
+var salmon_Counties = topojson.feature(County_Salmon, County_Salmon.objects.CountySalmon),//.features, //why does the .features make my counties go away but without it my counties will draw?
 salmon_Ranges = topojson.feature(salmonRanges, salmonRanges.objects.CohoChinook_SalmonRanges).features;
 //examine the results
 // console.log(Salmon_Ranges);
@@ -71,6 +71,8 @@ salmon_Ranges = joinData(salmon_Ranges, csvData);
 var colorScale = makeColorScale(csvData);
 setEnumerationUnits(salmon_Ranges, map, path, colorScale);
 
+//add coordinated visualization to the map
+setChart(csvData, colorScale);
     };
 }; //end of setMap()
 
@@ -140,8 +142,8 @@ function makeColorScale(data){
 
 function joinData(salmon_Ranges, csvData){
     //...DATA JOIN LOOPS FROM EXAMPLE 1.1
-   //variables for data join
-   var attrArray = ["varA", "varB", "varC", "varD", "varE"];
+   //variables for data join changes in precip are estimated for 2040
+   var attrArray = ["change_Apr_precip", "change_Aug_precip","change_Nov_precip","TotalRiverMiles", "WildScenicRiversPct","PctMinesbeforeEndanged","BuiltDuringDamEraPct","AreaofRange","NumHatcheries"];
 
    //loop through csv to assign each set of csv attribute values to geojson region
    for (var i=0; i<csvData.length; i++){
@@ -149,7 +151,7 @@ function joinData(salmon_Ranges, csvData){
        var csvKey = csvRegion.RangeID; //the CSV primary key
 
        //loop through geojson regions to find correct region
-       for (var a=0; a<salmon_Ranges.length; a++){
+       for (var a=3; a<salmon_Ranges.length; a++){
 
            var geojsonProps = salmon_Ranges[a].properties; //the current region geojson properties
            var geojsonKey = geojsonProps.RangeID; //the geojson primary key
@@ -198,7 +200,7 @@ function setChart(csvData, colorScale){
     //create a scale to size bars proportionally to frame
     var yScale = d3.scaleLinear()
         .range([463, 0])
-        .domain([0, 100]);
+        .domain([50, -57]);
 
    //set bars for each province
    var bars = chart.selectAll(".bar")
@@ -253,7 +255,7 @@ function setChart(csvData, colorScale){
         .attr("x", 40)
         .attr("y", 40)
         .attr("class", "chartTitle")
-        .text("Number of Variable " + expressed[3] + " in each range");
+        .text("Precipitation differences in '" + expressed[3] + "' inches  in each range");
      //create vertical axis generator
     var yAxis = d3.axisLeft()
         .scale(yScale);
