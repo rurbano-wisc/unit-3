@@ -1,30 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <style>
-        @import url("mapStyle.css");
-    </style> -->
-
     <head>
+        <title>Coho & Chinook Salmon Crisis</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>D3 Activity 10</title>     
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <link rel="stylesheet" href="style.css"> 
+        <!-- mayber use w3 -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    </head>
 <!--  -->
     <body>
-        <h1>Coho & Chinook Salmon Ranges</h1> 
-            <h2>
-               
-            </h2>
-        <link rel="stylesheet" href="style.css">
-        <!--put your initial page content here-->
+        <div class="container-fluid">
+        <div class="jumbotron text-center">
+        <!-- <div id="overlay"><img src="swimming-upstream-salmon-slow.gif" /></div> -->
+
+        <!-- <div class="bg obj-fit-cover"></div> -->
+       
+        <h1>A look at Coho & Chinook Salmon Ranges</h1> 
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-sm-4">
+            <h3>What are Coho and Chinook Salmon?</h3>
+            <p>Coho and Chinook salmon are anadromous fish, meaning they begin life in fresh water, 
+                make their ways out to the ocean to feed and grow. When mature enough, they complete the life cycle by 
+                swimming up stream to spawn. This makes them vulnerable to a variety of threats. 
+                </p>
+                <p>There is a decline in Salmon populations, as recently as April 8th, 2023 the West Coast Salmon Fishing Season 
+                was declared shut down as the populations face dwindling numbers. <p>The salmon need time to rebound and the government needs to 
+                allocate funding for the cause, and see to it the funding is properly used </p>  
+                <div class="carousel-inner">
+                    <!-- <img class="mySlides" src="cohopugetsound.gif" height = "300"> -->
+                    <img class="mySlides" src="cohosalmon.png" height = "300"/>
+                    <img class="mySlides" src="chinooksalmon.png"height = "300"/>
+                
+                    <!-- <img class="mySlides" src="Coho_Salmon_BLM.jpg" height = "300"> -->
+                    <!-- <img class="mySlides" src="adultchinooknoaa.jpg" height = "300"> -->
+
+                    <img class="mySlides" src="adultcohonoaa.jpg" height = "300">
+                    <img class="mySlides" src="adultchinook.jpg" height = "300">
+                    
+
+                    <!-- <img class="mySlides" src="CalisalmonID.jpg"> -->
+                    </div>     
+            </p>
+          </div>
+
+          <div class="col-sm-4">
+            <h3>What are some threats faced by salmon? </h3>
+            <p>Some of the threats they face may seem more obvious such as blocked access by dams, water quality being  effected by mining activity, and disease 
+                spreading from within poorly managed open ocean salmon hatcheries (the first variable on the dropdown). <p> 
+                The second variable looks at the percent of mines created before salmon were declared endangered under the California Endangered Species act in 1989.</p>
+             <p>Percentages of rivers with wild and scenic designation is the fourth variable. Could this be a enactment to help salmon populations?</p>
+             
+          </div>
+
+          <div class="col-sm-4">
+            <h3>Additional threats</h3>        
+            <p>The third variable displays the percent of dams built during the dam era, there is enough reason to plead why hydropower should not be
+                seen as a reliable/feasible source of hydroelectricy or as a source of water stroage in an increasingly hotter climate.
+            </p>
+            <p>Which leads us to our final variables available which include anticipated rainfall differences for select months as well as average rainfalls for the same months.
+                Less rainfall is leading to more drought and drier, warmer streams making it difficult for spawning as salmon attempt to swim upstream.   </p>
+                <P>
+                <IMG SRC="swimming-upstream-salmon-slow.gif" class="center" height = "300">
+            </p>
+            
+            <!-- links to sources want to have at bottom of page
+                <p>
+                Hopefully this webpage has piqued your salmon curiousity and you step away a bit more informed about one of the current crisis faced by salmon 
+                <p>
+                Sources provided for the various variables and information provided on this page.
+            </p>
+            <ul>
+                <li><a href="https://www.npr.org/2023/04/07/1168595658/california-salmon-fishing-shutdown-low-stock ">NPR article on salmon low stock April 8th, 2023</a></li>
+                <li><a href=" https://www.spokesman.com/stories/2022/aug/24/spokane-tribe-releases-146-chinook-salmon-into-spo/">Spokane Tribe Salmon Release </a></li>
+                <li><a href=" https://www.fisheries.noaa.gov/species/chinook-salmon-protected">Chinook Salmon Protected info</a></li>
+                <li><a href="https://stateofsalmon.wa.gov/executive-summary/challenges/hatcheries/">Info on challenges with hatcheries</a></li>
+                <li><a href="https://www.rivers.gov/designation.php">What is a wild and scenic river?</a></li>
+                <li><a href="https://www.fisheries.noaa.gov/west-coast/sustainable-fisheries/salmon-life-cycle-and-seasonal-fishery-planning#:~:text=The%20most%20common%20age%20of,mid%2DApril%20to%20early%20August.">Salmon Lifecycle</a></li>
+                <li><a href="https://stateofsalmon.wa.gov/statewide-data/water/">Inspiration to look at future rainfall patterns</a></li>
+                <li><a href="https://fishmasters.com/types-of-salmon/">How to ID salmon!</a></li>
+            </ul>
+             -->
+     <!-- want to include at bottom -->
+                <!-- <p>
+                Chinook (King) salmon and Coho Salmon have been revelled to 
+                hold extreme importance to local native tribes as well, symbolizing sustenance and as a constant reminder of all that the environment provides. 
+               <p> Coincidentally Salmon survival is crucial to west coast habitat biodiversity.
+            </p> -->
+        
         <div id="map"></div>
+        
         <div id="body"></div>
-        <div id="slidecontainer"></div>
-       <!--  -->
-        <footer class="footer"></footer>
-        </div>
-    </footer>
+       
+       <!-- footer -->
+        <footer class="footer">
+         
+        </footer>
+
 <!---->
     <!-- links to scripts -->
 
@@ -38,6 +118,8 @@
     <script src="https://unpkg.com/topojson@3"></script>
         
         <!-- <script type="text/javascript" src=" bubblechart.js"></script>-->
-        <script type="text/javascript" src="main2.js"></script>
+        <script type="text/javascript" src="main.js"></script>
     </body>
+
 </html>
+

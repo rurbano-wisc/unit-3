@@ -313,15 +313,15 @@ function dehighlight(props){
             .select("desc")
             .text();
 
+        //here?
+//below Example 2.4 line 21...remove info label
+            d3.select(".infolabel")
+            .remove();
         var styleObject = JSON.parse(styleText);
 
         return styleObject[styleName];
     };
 };
-//here?
-//below Example 2.4 line 21...remove info label
-d3.select(".infolabel")
-.remove();
 
 //function to move info label with mouse
 function moveLabel(){
@@ -360,7 +360,7 @@ function setEnumerationUnits(franceRegions, map, path, colorScale){
     .style("fill", function(d){            
         var value = d.properties[expressed];            
         if(value) {                
-            return colorScale(d.properties[expressed]);            
+            return colorScale(value);            
         } else {                
             return "#ccc";            
         }
@@ -409,7 +409,10 @@ function setChart(csvData, colorScale){
         .attr("width", chartInnerWidth)
         .attr("height", chartInnerHeight)
         .attr("transform", translate);
-    
+            //below Example 2.2 line 16...add style descriptor to each path
+var desc = regions.append("desc")
+.text('{"stroke": "#000", "stroke-width": "0.5px"}');
+
    //set bars for each province
    var bars = chart.selectAll(".bar")
         .data(csvData)
@@ -444,13 +447,6 @@ function setChart(csvData, colorScale){
         //     return colorScale(d[expressed]);
         // });
         .on("mousemove", moveLabel);
-
-        //adding this anywhere breaks script Example 2.3
-// -----
-        //below Example 2.2 line 16...add style descriptor to each path
-//     var desc = regions.append("desc")
-//     .text('{"stroke": "#000", "stroke-width": "0.5px"}');
-
 
 // //below Example 2.2 line 31...add style descriptor to each rect
 //     var desc = bars.append("desc")
@@ -502,5 +498,21 @@ function setChart(csvData, colorScale){
         //set bar positions, heights, and colors
     updateChart(bars, csvData.length, colorScale);       
 };//close out setChart function
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000); // Change image every 6 seconds
+}
 
 })(); //last line of main.js
