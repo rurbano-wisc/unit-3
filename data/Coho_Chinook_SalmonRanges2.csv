@@ -1,24 +1,24 @@
-﻿RangeID,ESU_DPS,Class,Number of Hatcheries,Percentage of mines built before 1989,Total river % Wild & Scenic,Built during dam era (1930s-1960s) %,November precip average 1981-2010,Estimated difference for November 2040,August precip average 1981-2010,Estimated difference for August 2040,April precip average 1981-2010,Estimated difference for April 2040
-6,Puget Sound Chinook Salmon,Accessible,30,81.92771084,6.631893035,16.82242991,224.2766387,-53.03,37.25289307,8.93,105.3068658,-19.31
-14,Sacramento Winter-run/Central Val. Spr. Chinook,Historical Watershed: Anthropogenically Blocked,0,99.80079681,0,34.09090909,84.77016703,-43.16,6.482587607,-1.91,48.15802173,-14.17
-15,Sacramento Winter-run/Central Val. Spr. Chinook,Accessible,0,100,2.1363301,21.21212121,48.15484619,-31.04,1.299849445,-2,25.42649777,-6.29
-10,Central Valley Spring-run Chinook Salmon,Accessible-Likely Extirpated,2,82.25806452,0,28.84615385,38.11386899,-24.81,1.109815595,-1.94,25.51256964,-5.73
-8,Upper Willamette River Chinook Salmon,Accessible,11,97.87234043,4.955606899,21.25984252,147.9848343,-24.39,15.41027101,-3.67,73.89017947,-1.2
-17,Central California Coast Coho Salmon,Accessible - Likely Extirpated,0,0,0,36.06557377,42.27091075,-20.67,1.147005313,-0.99,22.67953654,-0.3
-21,Southern OR\Northern CA Coasts Coho Salmon,Historical Watershed: Anthropogenically Blocked,0,90.07092199,14.88282759,46.66666667,49.82980358,-20.6,6.1287661,-2.07,24.57555583,-9.1
-20,Southern OR\Northern CA Coasts Coho Salmon,Accessible,3,80.11557657,42.75086779,35.48387097,142.9894138,-17.48,9.808087086,-6,68.84563093,-9.55
-16,Central California Coast Coho Salmon,Historical Watershed: Anthropogenically Blocked,0,100,0,52,17.73619129,-11.31,0.647032631,-0.81,10.32362179,-2.3
-9,Upper Willamette River Chinook Salmon,Historical Watershed: Anthropogenically Blocked,1,92.75362319,7.4877233,25,77.82176405,-7.72,9.664660378,-0.05,43.16399327,2.82
-12,Central Valley Spring-run Chinook Salmon,Accessible,2,93.63636364,0.184284453,28.81355932,48.58470683,-7.33,1.749602357,-1.54,26.22125207,0.88
-7,Puget Sound Chinook Salmon,Historical Watershed: Anthropogenically Blocked,1,0,0,66.66666667,40.69318765,-3.31,5.68837849,1.8,18.97706604,-1.69
-19,Oregon Coast Coho Salmon,Accessible,0,81.51950719,2.362923059,42.85714286,175.869026,-2.7,15.2606772,-8.64,83.87141589,5.82
-1,California Coastal Chinook Salmon,Historical Watershed: Anthropogenically Blocked,0,100,0,33.33333333,19.72772533,-2.32,0.707009802,-0.38,10.11774523,1.62
-4,Lower Columbia River Chinook Salmon,Historical Watershed: Anthropogenically Blocked,9,100,11.97780911,100,75.74239547,3.62,7.562024275,-1.18,35.35284969,0.39
-23,Lower Columbia River Coho & Chinook Salmon,Historical Watershed: Anthropogenically Blocked,0,100,11.97777838,100,75.74250921,3.62,7.562029916,-1.18,35.35291903,0.39
-5,Lower Columbia River Chinook Salmon,Naturally Blocked,0,0,0,0,10.89194767,3.64,1.210913401,0.42,4.851074549,1.63
-13,Lower Columbia River/Upper Will. Chinook,Accessible,3,100,51.38367773,28.57142857,69.09858242,7.35,7.468966001,-0.05,39.19333439,11.38
-18,Central California Coast Coho Salmon,Accessible,1,100,0,35.35353535,82.54050959,10.26,2.145659286,-0.74,39.85413772,13.01
-2,California Coastal Chinook Salmon,Accessible,2,31.25,23.54389993,26.19047619,116.752755,16.51,4.826237005,-2.37,58.58245043,10.67
-11,Central Valley Spring-run Chinook Salmon,Historical Watershed: Anthropogenically Blocked,0,82.38130564,10.07219761,24.85549133,86.80430539,18.77,5.931070973,3.38,52.30772774,18.54
-22,Lower Columbia River Coho Salmon,Accessible,89,67.25838264,9.827459914,31.73076923,198.7253148,41.14,21.93684043,4.99,96.60113334,27.53
-3,Lower Columbia River Chinook Salmon,Accessible,86,66.99801193,4.588450727,32.22222222,195.811446,42.43,21.74366858,5.6,92.96327073,25.91
+﻿RangeID,ESU_DPS,RangeESU,Class,Number of Hatcheries,Percentage of mines built before 1989,Total river % Wild & Scenic,Built during dam era (1930s-1960s) %,November precip average 1981-2010,Estimated average for November 2040,April precip average 1981-2010,Estimated average for April 2040
+1,California Coastal Chinook ,CACoastalChinook1_AnthrBlock,Anthropogenically Blocked,0,100,0,33.33,19.73,17.41,10.12,11.74
+2,California Coastal Chinook ,CACoastalChinook2,Accessible,2,31.25,23.54,26.19,116.75,133.26,58.58,69.25
+3,Lower Columbia River Chinook ,LowerColumbiaRiverChinook3,Accessible,86,67,4.59,32.22,195.81,238.24,92.96,118.87
+4,Lower Columbia River Chinook ,LowerColumbiaRiverChinook4_AnthrBlock,Anthropogenically Blocked,9,100,11.98,100,75.74,79.36,35.35,35.74
+5,Lower Columbia River Chinook ,LowerColumbiaRiverChinook5,Naturally Blocked,0,0,0,0,10.89,14.53,4.85,6.48
+6,Puget Sound Chinook ,PugetSoundChinook6,Accessible,30,81.93,6.63,16.82,224.28,171.25,105.31,86
+7,Puget Sound Chinook ,PugetSoundChinook7_AnthrBlock,Anthropogenically Blocked,1,0,0,66.67,40.69,37.38,18.98,17.29
+8,Upper Willamette River Chinook ,UppWillametteChinook8,Accessible,11,97.87,4.96,21.26,147.98,123.59,73.89,72.69
+9,Upper Willamette River Chinook ,UppWillametteChinook9_AnthrBlock,Anthropogenically Blocked,1,92.75,7.49,25,77.82,70.1,43.16,45.98
+10,Central Valley Spring-run Chinook ,CentralValleySprChinook10_LocalExt,Accessible-Local Extinction,2,82.26,0,28.85,38.11,13.3,25.51,19.78
+11,Central Valley Spring-run Chinook ,CentralValleySprChinook11_AnthrBlock,Anthropogenically Blocked,0,82.38,10.07,24.86,86.8,105.57,52.31,70.85
+12,Central Valley Spring-run Chinook ,CentralValleySprChinook12,Accessible,2,93.64,0.18,28.81,48.58,41.25,26.22,27.1
+13,Lower Columbia River/Upper Will. Chinook,LowerColumbiaRiverUppWillChinook13,Accessible,3,100,51.38,28.57,69.1,76.45,39.19,50.57
+14,Sacramento Winter-run/Central Val. Spr. Chinook,SacWinterCentralValSprChinook14_AnthrBlock,Anthropogenically Blocked,0,99.8,0,34.09,84.77,41.61,48.16,33.99
+15,Sacramento Winter-run/Central Val. Spr. Chinook,SacWinterCentralValSprChinook15,Accessible,0,100,2.14,21.21,48.15,17.11,25.43,19.14
+16,Central California Coast Coho ,CentralCACoastCoho16_AnthrBlock,Anthropogenically Blocked,0,100,0,52,17.74,6.43,10.32,8.02
+17,Central California Coast Coho ,CentralCACoastCoho17_LocalExt,Accessible-Local Extinction,0,0,0,36.07,42.27,21.6,22.68,22.38
+18,Central California Coast Coho ,CentralCACoastCoho18,Accessible,1,100,0,35.35,82.54,92.8,39.85,52.86
+19,Oregon Coast Coho ,ORCoastCoho19,Accessible,0,81.52,2.36,42.86,175.87,173.17,83.87,89.69
+20,Southern OR\Northern CA Coasts Coho ,SouthernORNorthernCACoastCoho20,Accessible,3,80.12,42.75,35.48,142.99,125.51,68.85,59.3
+21,Southern OR\Northern CA Coasts Coho ,SouthernORNorthernCACoastCoho21_AnthrBlock,Anthropogenically Blocked,0,90.07,14.88,46.67,49.83,29.23,24.58,15.48
+22,Lower Columbia River Coho ,LowerColumbiaRiverCoho,Accessible,89,67.26,9.83,31.73,198.73,239.87,96.6,124.13
+23,Lower Columbia River Coho & Chinook ,LowerColumbiaRiverCoho&Chinook23_AnthrBlock,Anthropogenically Blocked,0,100,11.98,100,75.74,79.36,35.35,35.74
