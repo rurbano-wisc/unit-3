@@ -278,25 +278,11 @@ function dehighlight(props){
 
 //function to move info label with mouse
 function moveLabel(){
-    //get width of label
-    var labelWidth = d3.select(".infolabel")
-    .node()
-    .getBoundingClientRect()
-    .width;
-    //use coordinates of mousemove event to set label coordinates
-    var x1 = event.clientX ,
-        y1 = event.clientY ,
-        x2 = event.clientX ,
-        y2 = event.clientY ;
 
-    //horizontal label coordinate, testing for overflow
-    var x = event.clientX > window.innerWidth - labelWidth - 20 ? x2 : x1; 
-    //vertical label coordinate, testing for overflow
-    var y = event.clientY < 45 ? y2 : y1; 
-
-    d3.select(".infolabel")
-        .style("margin-left", x + "px")
-        .style("margin-top", y + "px");
+    d3.select(".infolabel") // you will also need to ensure your css file is pointing to .infolabel and not Map.infolabel
+        .style("left", (event.pageX + 30) + "px")
+        .style("top", (event.pageY) + "px");
+        
 };
 
 function setEnumerationUnits(salmon_Ranges, map, path, colorScale){
