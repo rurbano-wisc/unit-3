@@ -102,7 +102,7 @@ window.onload = function(){
         })
         .attr("cx", function(d, i){
             //use the index to place each circle horizontally
-            return 90 + (i * 180);
+            return x(i);
         })
         .attr("cy", function(d){
  //subtract value from 450 to "grow" circles up from the bottom instead of down from the top of the SVG
@@ -138,51 +138,16 @@ window.onload = function(){
         .append("text")
         .attr("class", "labels")
         .attr("text-anchor", "left")
-        .attr("y", function(d){
-            //vertical position centered on each circle
-            return y(d.population) + 5;
-        });
-
-// // step 3-14 comment out below
-//         .attr("x", function(d,i){
-//             //horizontal position to the right of each circle
-//             return x(i) + Math.sqrt(d.population * 0.01 / Math.PI) + 5;
-//         })
-//         .attr("y", function(d){
-//             //vertical position centered on each circle
-//             return y(d.population) + 5;
-//         })
-//         .text(function(d){
-//             return d.city + ", Pop. " + d.population;
-
-// step 3-15 
-// example 3.15 first and second lines of labels
-   //first line of label
-    var nameLine = labels.append("tspan")
-        .attr("class", "nameLine")
         .attr("x", function(d,i){
             //horizontal position to the right of each circle
             return x(i) + Math.sqrt(d.population * 0.01 / Math.PI) + 5;
         })
-        .text(function(d){
-            return d.city;
-        });
-
-// step 3-17
-// create format generator
-    var format = d3.format(",");
-
-//second line of label
-    var popLine = labels.append("tspan")
-        .attr("class", "popLine")
-        .attr("x", function(d,i){
-            return x(i) + Math.sqrt(d.population * 0.01 / Math.PI) + 5;
+        .attr("y", function(d){
+            //vertical position centered on each circle
+            return y(d.population) + 5;
         })
-        // // step 3-16 example 3.16
-        .attr("dy", "15") //vertical offset
         .text(function(d){
-            // return "Pop. " + d.population;
-            return "Pop. " + format(d.population); //use format generator to format numbers
+            return d.city + ", Pop. " + d.population;
         });
 
 };
